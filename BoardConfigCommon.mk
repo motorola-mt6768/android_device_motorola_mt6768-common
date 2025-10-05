@@ -56,6 +56,10 @@ TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_BOOTLOADER_BOARD_NAME := mt6768
 TARGET_NO_BOOTLOADER := true
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
+
 # Platform
 TARGET_BOARD_PLATFORM := mt6768
 
