@@ -11,9 +11,6 @@ on early-init
 
     # initialize vendor.all.modules.ready to 1 here to prevent NOT GKI project blocked
     setprop vendor.all.modules.ready 1
-    # boot perf. tune
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
 
 on init
     write /proc/bootprof "INIT:init"
@@ -248,8 +245,6 @@ on post-fs-data
     chmod 0775 /vendor/xbin/MPED
     chmod 0666 /dev/gps_emi
 
-# -----------------------
-# Add by MTK
     # SCP log
     chmod 0660 /sys/class/misc/scp/scp_mobile_log
     chown root system /sys/class/misc/scp/scp_mobile_log
@@ -270,14 +265,9 @@ on post-fs-data
     chmod 444 /etc/radvd/radvd.conf
 
     # Mali 3D GPU driver
-    #insmod /vendor/lib/modules/mali.ko
     chmod 666 /dev/mali0
-    #chown system graphics /dev/mali
-
-
 
     # Touch Panel
-    # chmod 0664 /dev/touch
     chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
     chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
     chown root diag /sys/module/tpd_setting/parameters/tpd_mode
@@ -295,10 +285,7 @@ on post-fs-data
     chown root radio /dev/ptmx
 
     # M4U
-    #insmod /vendor/lib/modules/m4u.ko
-    #mknod /dev/M4U_device c 188 0
     chmod 0444 /dev/m4u
-    #chown system media /dev/M4U_device
     chmod 0640 /proc/m4u
     chown system media /proc/m4u
 
@@ -341,8 +328,6 @@ on post-fs-data
     mkdir /data/vendor/vcodec/out 0770 media system
 
     #MJC
-    #insmod /vendor/lib/modules/mjc_kernel_driver.ko
-    #mknod /dev/MJC c 168 0
     chmod 0660 /dev/MJC
     chown media system /dev/MJC
 
@@ -481,10 +466,6 @@ on post-fs-data
     chown media system /dev/hdmitx
     chmod 0664 /dev/hdmitx
 
-
-    # JPEG
-    #chmod 0444 /dev/mtk_jpeg
-
     # almk
     chmod 0440 /dev/mtk_almk
 
@@ -581,9 +562,6 @@ on post-fs-data
     #RTC
     chmod 660 /dev/alarm
     chown root system /dev/alarm
-
-# End of adding by MTK drivers
-# -----------------------
 
 on zygote-start
     write /proc/bootprof "INIT:zygote-start"
@@ -803,14 +781,6 @@ on property:vold.decrypt=trigger_shutdown_framework
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
 
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class late_start
-    disabled
-    oneshot
-    keycodes 114 115 116
-
 # end boot time fs tune
 on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/iostats 1
@@ -830,40 +800,6 @@ on property:sys.boot_completed=1
 
     # Stop bootprof
     write /proc/bootprof "0"
-
-#service dpfd /vendor/bin/dpfd
-#	user root
-#	group system media
-
-#
-#  External Modme control related services
-#
-
-#
-#  Modem related services (Begin)
-#
-##Add by T.Zh for ppp daemon
-#service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
-#    user root
-#    disabled
-#    oneshot
-#
-##
-#
-#  Modem related services (End)
-#
-
-#add for power-off alarm
-#service poad /vendor/bin/poad
-#    class main
-#    user system
-#    group system
-#    oneshot
-
-#service BGW /vendor/xbin/BGW
-#	user system
-#	group gps system radio
-#	class main
 
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
@@ -923,9 +859,7 @@ service osi /system/bin/osi
     user root
     disabled
     oneshot
-    #seclabel u:r:osi:s0
 
-#Penang code for EKPENANG4G-10941 by wuzhisen at 20240228 start
 on property:ro.boot.ramsize=8
     setprop ro.lmk.use_minfree_levels true
     setprop vendor.sys.vm.swappiness 100
@@ -934,4 +868,3 @@ on property:ro.boot.ramsize=8
 on property:ro.boot.ramsize=4
    setprop vendor.sys.vm.swappiness 160
    write /proc/sys/vm/watermark_scale_factor 20
-#Penang code for EKPENANG4G-10941 by wuzhisen at 20240228 end
