@@ -69,6 +69,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.recovery.mt6768.rc",
+    src: "etc/init.recovery.mt6768.rc",
+    sub_dir: "init",
+    recovery: true,
+}
+
+prebuilt_etc {
     name: "init_connectivity.rc",
     src: "etc/init_connectivity.rc",
     sub_dir: "init/hw",
