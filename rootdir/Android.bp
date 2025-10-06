@@ -13,13 +13,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.connectivity.common.rc",
-    src: "etc/init.connectivity.common.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.connectivity.rc",
     src: "etc/init.connectivity.rc",
     sub_dir: "init/hw",
@@ -73,13 +66,6 @@ prebuilt_etc {
     src: "etc/init.recovery.mt6768.rc",
     sub_dir: "init",
     recovery: true,
-}
-
-prebuilt_etc {
-    name: "init_connectivity.rc",
-    src: "etc/init_connectivity.rc",
-    sub_dir: "init/hw",
-    vendor: true,
 }
 
 // fstab

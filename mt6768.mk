@@ -70,7 +70,6 @@ PRODUCT_PACKAGES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     init.cgroup.rc \
-    init.connectivity.common.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6768.rc \
@@ -79,7 +78,6 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.recovery.mt6768.rc \
     init.sensor_1_0.rc \
-    init_connectivity.rc \
     fstab.mt6768
 
 PRODUCT_COPY_FILES += \
