@@ -16,6 +16,10 @@ vendor/etc/init/atcid.rc
 vendor/etc/init/audiocmdservice_atci.rc
 vendor/lib/hw/android.hardware.audio.effect@6.0-impl.so
 vendor/lib/hw/android.hardware.audio.effect@7.0-impl.so
+vendor/lib64/hw/android.hardware.audio@6.0-impl-mediatek.so
+vendor/lib64/hw/android.hardware.audio@7.0-impl-mediatek.so
+vendor/lib/hw/android.hardware.audio@6.0-impl-mediatek.so
+vendor/lib/hw/android.hardware.audio@7.0-impl-mediatek.so
 vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.r_submix.default.so
 vendor/lib/hw/audio.r_submix.mt6768.so
@@ -156,6 +160,8 @@ vendor/lib64/soundfx/libhapticgenerator.so
 
 # Bluetooth
 vendor/bin/autobt
+vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
+vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
 vendor/etc/init/init.bt_drv.rc
@@ -436,6 +442,8 @@ vendor/firmware/mt6631_fm_v1_patch.bin
 vendor/firmware/remoteproc_scp
 
 # GPS
+vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
+vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
 vendor/bin/hw/android.hardware.gnss-service.mediatek
 vendor/etc/gnss/agps_profiles_conf2.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
@@ -1042,6 +1050,7 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 
 # Sensors
+vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
 vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
 vendor/lib/libsensorndkbridge.so
@@ -1052,6 +1061,8 @@ vendor/lib64/libsensorndkbridge.so
 vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
 vendor/bin/thermal
 vendor/bin/thermal_manager
+vendor/lib/hw/android.hardware.thermal@2.0-impl.so
+vendor/lib64/hw/android.hardware.thermal@2.0-impl.so
 vendor/bin/thermalloadalgod
 vendor/etc/.tp/.ht120.mtc
 vendor/etc/fstb.cfg
