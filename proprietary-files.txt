@@ -1009,9 +1009,7 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
 vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
-vendor/lib/libsensorndkbridge.so
 vendor/lib64/libksensor.so
-vendor/lib64/libsensorndkbridge.so
 
 # Thermal
 vendor/bin/hw/android.hardware.thermal@2.0-service.mtk
