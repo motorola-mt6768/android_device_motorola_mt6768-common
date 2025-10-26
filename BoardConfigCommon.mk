@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Build Rules
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 COMMON_PATH := device/motorola/mt6768-common
 
 # Architecture
