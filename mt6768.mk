@@ -308,6 +308,11 @@ PRODUCT_PACKAGES += \
     android.hardware.usb.gadget@1.0.vendor \
     android.hardware.usb@1.3.vendor
 
+# Vibrator
+TARGET_VIBRATOR_SUPPORTS_EFFECTS := true
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.mediatek
+
 # VNDK
 PRODUCT_PACKAGES += \
     vndservicemanager
