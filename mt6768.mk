@@ -331,5 +331,8 @@ PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.control@1.1.vendor \
     libnetutils.vendor
 
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/motorola/mt6768-common/mt6768-common-vendor.mk)
