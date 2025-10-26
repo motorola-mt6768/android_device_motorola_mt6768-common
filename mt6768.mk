@@ -20,17 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
-    update_verifier
-
-PRODUCT_PACKAGES += \
-    mtk_plpath_utils \
-    mtk_plpath_utils.recovery \
-    mtk_plpath_utils_ota
-
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-service \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery
+    update_verifier \
+    otapreopt_script \
+    checkpoint_gc
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
@@ -43,7 +35,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_vendor=true \
-    POSTINSTALL_PATH_vendor=bin/mtk_plpath_utils_ota \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
     FILESYSTEM_TYPE_vendor=ext4 \
     POSTINSTALL_OPTIONAL_vendor=true
 
@@ -53,9 +45,14 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio@7.0-util.vendor \
+    android.hardware.audio@7.0.vendor \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio@2.1-impl \
+    android.hardware.audio.common-util \
+    android.hardware.audio.common@7.0.vendor \
+    android.hardware.audio.common@7.0-util.vendor \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
@@ -88,8 +85,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor
 
+# Boot
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.2-service \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery
+
 # Camera
 PRODUCT_PACKAGES += \
+    android.hardware.camera.common@1.0.vendor \
     android.hardware.camera.device@3.6.vendor \
     android.hardware.camera.provider@2.6.vendor
 
@@ -105,7 +109,10 @@ PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
     android.hardware.graphics.allocator@2.0.vendor \
     android.hardware.graphics.allocator@3.0.vendor \
-    android.hardware.graphics.allocator@4.0.vendor
+    android.hardware.graphics.allocator@4.0.vendor \
+    libdrm.vendor \
+    libhwc2on1adapter \
+    libhwc2onfbadapter
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service
@@ -127,6 +134,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1.vendor
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -151,8 +162,11 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
+    libflatbuffers-cpp.vendor \
     libhidltransport.vendor \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    libruy.vendor \
+    libpcap.vendor
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -217,6 +231,16 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    ls_client \
+    libchrome.vendor \
+    NfcNci \
+    SecureElement \
+    Tag \
+    vendor.nxp.nxpese@1.0.vendor \
+    vendor.nxp.nxpnfc@2.0.vendor
+
+PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2.vendor \
     android.hardware.secure_element@1.2.vendor
 
@@ -264,6 +288,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-V2-ndk.vendor \
     android.hardware.power@1.2.vendor
+
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-3.9.1-vendorcompat
+
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \

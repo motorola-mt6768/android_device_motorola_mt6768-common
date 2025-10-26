@@ -16,11 +16,7 @@ vendor/lib64/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib64/hw/android.hardware.audio@7.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.audio@6.0-impl-mediatek.so
 vendor/lib/hw/android.hardware.audio@7.0-impl-mediatek.so
-vendor/lib/hw/audio.primary.default.so
-vendor/lib/hw/audio.r_submix.default.so
 vendor/lib/hw/audio.r_submix.mt6768.so
-vendor/lib/hw/audio.usb.default.so
-vendor/lib/hw/audio_policy.stub.so
 vendor/lib/libMtkSpeechEnh.so
 vendor/lib/lib_iir.so
 vendor/lib/lib_speech_enh.so
@@ -45,7 +41,6 @@ vendor/lib/libspeech_enh_lib.so
 vendor/lib/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib64/hw/audio.r_submix.mt6768.so
-vendor/lib64/hw/audio_policy.stub.so
 vendor/lib64/libMtkSpeechEnh.so
 vendor/lib64/lib_iir.so
 vendor/lib64/lib_speech_enh.so
@@ -282,7 +277,6 @@ vendor/lib64/libconnfem.so
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
-vendor/lib/hw/gralloc.default.so
 vendor/lib/libaal_key.so
 vendor/lib/libflatbuffers-cpp.so
 vendor/lib/libged.so
@@ -311,7 +305,6 @@ vendor/lib/vendor.mediatek.hardware.pq@2.6.so
 vendor/lib/vendor.mediatek.hardware.pq@2.7.so
 vendor/lib/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib/vendor.mediatek.hardware.pq@2.9.so
-vendor/lib64/hw/gralloc.default.so
 vendor/lib64/libaal_key.so
 vendor/lib64/libcomposer_ext.so
 vendor/lib64/libflatbuffers-cpp.so
@@ -581,14 +574,10 @@ vendor/etc/init.insmod.mt6768.cfg
 vendor/etc/wfd_source_capability.csv
 vendor/lib/libdynamiclog.so
 vendor/lib/libminiui.so
-vendor/lib/libruy.so
 vendor/lib/libthha.so
-vendor/lib64/libbinderdebug.so
 vendor/lib64/libdynamiclog.so
 vendor/lib64/libfft_vendor.so
 vendor/lib64/libminiui.so
-vendor/lib64/libruy.so
-vendor/lib64/libz_stable.so
 
 # Native public libraries
 vendor/etc/public.libraries.txt
@@ -618,7 +607,6 @@ vendor/lib/libneuroeara.so
 vendor/lib/libneuropilot_hal_utils.so
 vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so
 vendor/lib/libtflite_mtk.so
-vendor/lib/libvpx.so
 vendor/lib/mt6768/libnir_neon_driver.so;SYMLINK=vendor/lib/libnir_neon_driver.so
 vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/libapu_mdw.so
@@ -638,10 +626,6 @@ vendor/lib64/mt6768/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_drive
 
 # NFC
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
-vendor/lib/hw/android.hardware.nfc@1.0-impl.so
-vendor/lib/libnxp_extamp_intf.so
-vendor/lib64/hw/android.hardware.nfc@1.0-impl.so
-vendor/lib64/libnxp_extamp_intf.so
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
