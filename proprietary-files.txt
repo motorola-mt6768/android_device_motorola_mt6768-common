@@ -181,18 +181,15 @@ vendor/etc/init/camerahalserver.rc
 vendor/lib/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
 vendor/lib/libcam.halsensor.hwintegration.so
-vendor/lib/libdpframework.so
 vendor/lib/libgz_gp_client.so
 vendor/lib/libgz_uree.so
 vendor/lib/libimgsensorca.so
 vendor/lib/libispcameraca.so
-vendor/lib/libmtk_drvb.so
 vendor/lib/libmtkcam.eventcallback.so
 vendor/lib/libmtkcam_debugutils.so
-vendor/lib/libpq_prot.so
-vendor/lib/mt6768/libdpframework.so
-vendor/lib/mt6768/libmtk_drvb.so
-vendor/lib/mt6768/libpq_prot.so
+vendor/lib/mt6768/libdpframework.so;SYMLINK=vendor/lib/libdpframework.so
+vendor/lib/mt6768/libmtk_drvb.so;SYMLINK=vendor/lib/libmtk_drvb.so
+vendor/lib/mt6768/libpq_prot.so;SYMLINK=vendor/lib/libpq_prot.so
 vendor/lib/vendor.mediatek.hardware.camera.atms@1.0.so
 vendor/lib/vendor.mediatek.hardware.camera.bgservice@1.0.so
 vendor/lib/vendor.mediatek.hardware.camera.bgservice@1.1.so
@@ -224,7 +221,6 @@ vendor/lib64/libcamalgo.utility.so
 vendor/lib64/libcamalgo.warp.so
 vendor/lib64/libcamdrv_isp.so
 vendor/lib64/libcamdrv_tuning_mgr.so
-vendor/lib64/libdpframework.so
 vendor/lib64/libeffecthal.base.so
 vendor/lib64/libfeature_rss.so
 vendor/lib64/libgz_gp_client.so
@@ -234,7 +230,6 @@ vendor/lib64/libimgsensorca.so
 vendor/lib64/libispcameraca.so
 vendor/lib64/liblpcnr.so
 vendor/lib64/libmsnr.so
-vendor/lib64/libmtk_drvb.so
 vendor/lib64/libmtkcam.eventcallback.so
 vendor/lib64/libmtkcam.featurepipe.vsdof_util.so
 vendor/lib64/libmtkcam_3rdparty.core.so
@@ -254,11 +249,10 @@ vendor/lib64/libmtkcam_rsc.so
 vendor/lib64/libmtkcam_scenariorecorder.so
 vendor/lib64/libmtkcam_sysutils.so
 vendor/lib64/libmtkisp_metadata.so
-vendor/lib64/libpq_prot.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
-vendor/lib64/mt6768/libdpframework.so
-vendor/lib64/mt6768/libmtk_drvb.so
-vendor/lib64/mt6768/libpq_prot.so
+vendor/lib64/mt6768/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
+vendor/lib64/mt6768/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
+vendor/lib64/mt6768/libpq_prot.so;SYMLINK=vendor/lib64/libpq_prot.so
 vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.1.so
@@ -409,14 +403,10 @@ vendor/lib/hw/gps.default.so
 vendor/lib64/hw/gps.default.so
 
 # Gatekeeper
-vendor/lib/hw/gatekeeper.default.so
-vendor/lib/hw/gatekeeper.trustonic.so
-vendor/lib/hw/libMcGatekeeper.so
-vendor/lib/hw/libSoftGatekeeper.so
-vendor/lib64/hw/gatekeeper.default.so
-vendor/lib64/hw/gatekeeper.trustonic.so
-vendor/lib64/hw/libMcGatekeeper.so
-vendor/lib64/hw/libSoftGatekeeper.so
+vendor/lib/hw/libMcGatekeeper.so;SYMLINK=vendor/lib/hw/gatekeeper.trustonic.so
+vendor/lib/hw/libSoftGatekeeper.so;SYMLINK=vendor/lib/hw/gatekeeper.default.so
+vendor/lib64/hw/libMcGatekeeper.so;SYMLINK=vendor/lib64/hw/gatekeeper.trustonic.so
+vendor/lib64/hw/libSoftGatekeeper.so;SYMLINK=vendor/lib64/hw/gatekeeper.default.so
 
 # Graphics
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
@@ -626,11 +616,10 @@ vendor/lib/libcmdl.so
 vendor/lib/libcmdl_ndk.mtk.vndk.so
 vendor/lib/libneuroeara.so
 vendor/lib/libneuropilot_hal_utils.so
-vendor/lib/libnir_neon_driver.so
 vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so
 vendor/lib/libtflite_mtk.so
 vendor/lib/libvpx.so
-vendor/lib/mt6768/libnir_neon_driver.so
+vendor/lib/mt6768/libnir_neon_driver.so;SYMLINK=vendor/lib/libnir_neon_driver.so
 vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/libapu_mdw.so
 vendor/lib64/libapusys.so
@@ -643,10 +632,9 @@ vendor/lib64/libneuroeara.so
 vendor/lib64/libneuron_adapter.so
 vendor/lib64/libneuron_platform.so
 vendor/lib64/libneuropilot_hal_utils.so
-vendor/lib64/libnir_neon_driver.so
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
 vendor/lib64/libtflite_mtk.so
-vendor/lib64/mt6768/libnir_neon_driver.so
+vendor/lib64/mt6768/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_driver.so
 
 # NFC
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
