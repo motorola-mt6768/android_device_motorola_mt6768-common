@@ -180,7 +180,9 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     libflatbuffers-cpp.vendor \
+    libhidltransport \
     libhidltransport.vendor \
+    libhwbinder\
     libhwbinder.vendor \
     libruy.vendor \
     libpcap.vendor
