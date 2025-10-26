@@ -44,24 +44,30 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 # Audio
+TARGET_EXCLUDES_AUDIOFX := true
+
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-util.vendor \
     android.hardware.audio@7.0.vendor \
-    android.hardware.audio.effect@7.0-impl \
-    android.hardware.audio.service \
-    android.hardware.bluetooth.audio-impl \
     android.hardware.audio.common-util \
     android.hardware.audio.common@7.0.vendor \
     android.hardware.audio.common@7.0-util.vendor \
+    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio.service \
+    android.hardware.soundtrigger@2.0.vendor \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
     audio.primary.default \
     audio.r_submix.default \
     audio.bluetooth.default \
-    audio.usb.default
-
-PRODUCT_PACKAGES += \
+    audio.usb.default \
+    audio_policy.stub \
+    libalsautils \
+    libaudiopreprocessing \
+    libopus.vendor \
+    libnbaio_mono \
+    audioclient-types-aidl-cpp.vendor \
     libaudiofoundation.vendor \
     libtinycompress
 
@@ -83,6 +89,8 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio-impl \
+    libbluetooth_audio_session \
     android.hardware.bluetooth@1.1.vendor
 
 # Boot
@@ -95,10 +103,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0.vendor \
     android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.provider@2.6.vendor
-
-PRODUCT_PACKAGES += \
-    libcamera2ndk_vendor
+    android.hardware.camera.provider@2.6.vendor \
+    libexpat.vendor \
+    libcamera2ndk_vendor \
+    libcamera_metadata.vendor \
+    libpng.vendor \
+    libexif \
+    libexif.vendor
 
 # Cgroup
 PRODUCT_COPY_FILES += \
@@ -115,7 +126,7 @@ PRODUCT_PACKAGES += \
     libhwc2onfbadapter
 
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-service
+    android.hardware.graphics.composer@2.3-service
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -147,11 +158,16 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
+    android.hardware.gnss-V1-ndk.vendor \
     android.hardware.gnss@1.1.vendor \
     android.hardware.gnss@2.1.vendor \
-    android.hardware.gnss-V1-ndk.vendor \
     android.hardware.gnss.measurement_corrections@1.1.vendor \
     android.hardware.gnss.visibility_control@1.0.vendor
+
+PRODUCT_PACKAGES += \
+    libcurl.vendor \
+    libjsoncpp.vendor \
+    libsqlite.vendor
 
 # Health
 PRODUCT_PACKAGES += \
@@ -291,7 +307,8 @@ PRODUCT_PACKAGES += \
 
 # Protobuf
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat
 
 # Radio
 PRODUCT_PACKAGES += \
