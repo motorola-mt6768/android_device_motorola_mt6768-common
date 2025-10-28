@@ -334,6 +334,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.cgroup.rc \
     init.connectivity.rc \
+    init.insmod.mt6768.cfg \
+    init.insmod.sh \
     init.modem.rc \
     init.mt6768.rc \
     init.mt6768.usb.rc \
