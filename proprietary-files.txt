@@ -146,7 +146,6 @@ vendor/lib64/soundfx/libhapticgenerator.so
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/bin/autobt
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
-vendor/etc/init/init.bt_drv.rc
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib/hw/audio.bluetooth.default.so
 vendor/lib/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
@@ -268,8 +267,6 @@ vendor/bin/chipinfo
 vendor/etc/init/chipinfo_init.rc
 
 # Connectivity
-vendor/etc/init/init.connfem.rc
-vendor/etc/init/init.fmradio_drv.rc
 vendor/lib/libconnfem.so
 vendor/lib64/libconnfem.so
 
@@ -385,7 +382,6 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml
 vendor/etc/gnss/agps_profiles_conf2.xml
 vendor/etc/init/android.hardware.gnss-service.mediatek.rc
-vendor/etc/init/init.gps_drv.rc
 vendor/etc/init/mtk_agpsd_p.rc
 vendor/etc/vintf/manifest/gnss-default.xml
 vendor/etc/vintf/manifest/gnss@2.1-service.xml
@@ -822,8 +818,6 @@ vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
 vendor/bin/wpa_cli
 vendor/etc/init/init.wfca.rc
-vendor/etc/init/init.wlan_drv.rc
-vendor/etc/init/init.wmt_drv.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/lib/libwapi.so
 vendor/lib/libwpa_client.so
