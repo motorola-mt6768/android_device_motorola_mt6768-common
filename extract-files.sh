@@ -80,6 +80,15 @@ function blob_fixup {
         vendor/lib64/libwifi-hal-mtk.so)
             "${PATCHELF}" --set-soname "libwifi-hal-mtk.so" "${2}"
             ;;
+        vendor/lib*/hw/vendor.mediatek.hardware.pq@2.15-impl.so)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            ;;
+        vendor/lib*/libmtkcam_stdutils.so)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            ;;
+        vendor/lib*/hw/audio.primary.mt6768.so)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            ;;
     esac
 }
 

@@ -390,7 +390,8 @@ PRODUCT_PACKAGES += \
     vndservicemanager
 
 PRODUCT_PACKAGES += \
-    libstagefright_foundation-v33
+    libstagefright_foundation-v33 \
+    libutils-v32
 
 # Wifi
 PRODUCT_PACKAGES += \
