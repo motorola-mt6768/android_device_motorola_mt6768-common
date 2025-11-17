@@ -74,8 +74,12 @@ function blob_fixup {
             "${PATCHELF}" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "${2}"
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
+        vendor/bin/mnld)
+            ;&
         vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so)
-             "$PATCHELF" --add-needed "libshim_sensors.so" "$2"
+            ;&
+        vendor/lib64/libcam.utils.sensorprovider.so)
+            grep -q "libshim_sensors.so" "$2" || "$PATCHELF" --add-needed "libshim_sensors.so" "$2"
             ;;
         vendor/lib64/libwifi-hal-mtk.so)
             "${PATCHELF}" --set-soname "libwifi-hal-mtk.so" "${2}"
