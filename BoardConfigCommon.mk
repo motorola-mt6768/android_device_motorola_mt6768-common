@@ -65,7 +65,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_SCREEN_DENSITY := 280
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(COMMON_PATH)/configs/vintf/framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 
@@ -110,12 +110,12 @@ BOARD_USES_METADATA_PARTITION := true
 TARGET_BOARD_PLATFORM := mt6768
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/properties/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/configs/properties/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/properties/vendor.prop
 
 # Recovery
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6768
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.mt6768
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USERIMAGES_USE_F2FS := true
 
@@ -124,6 +124,13 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
+
+# SKU
+ODM_MANIFEST_SKUS += ss tsts qsqs dsds
+ODM_MANIFEST_SS_FILES := $(COMMON_PATH)/configs/vintf/sku/manifest_ss.xml
+ODM_MANIFEST_TSTS_FILES := $(COMMON_PATH)/configs/vintf/sku/manifest_tsts.xml
+ODM_MANIFEST_QSQS_FILES := $(COMMON_PATH)/configs/vintf/sku/manifest_qsqs.xml
+ODM_MANIFEST_DSDS_FILES := $(COMMON_PATH)/configs/vintf/sku/manifest_dsds.xml
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
