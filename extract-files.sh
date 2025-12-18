@@ -118,6 +118,9 @@ function blob_fixup {
         vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so)
             sed -i "s/libhidltransport.so/libhidlbase_shim.so/" "${2}"
             ;;
+        vendor/lib64/libwifi-hal-mtk.so)
+            "${PATCHELF}" --set-soname "libwifi-hal-mtk.so" "${2}"
+            ;;
     esac
 }
 
