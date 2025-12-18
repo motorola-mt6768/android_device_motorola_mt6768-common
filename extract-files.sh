@@ -115,6 +115,9 @@ function blob_fixup {
         vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-moto.rc)
             sed -i 's|android.hardware.biometrics.fingerprint@2.1-service|android.hardware.biometrics.fingerprint@2.1-service-moto|g' "$2"
             ;;
+        vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so)
+            sed -i "s/libhidltransport.so/libhidlbase_shim.so/" "${2}"
+            ;;
     esac
 }
 
